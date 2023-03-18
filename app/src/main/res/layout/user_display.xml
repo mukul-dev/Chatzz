@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/userDisplayLayout"
+        android:layout_margin="5dp"
+        android:orientation="horizontal">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:id="@+id/user_profile_image"
+            android:src="@drawable/user_img"
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textIsSelectable="true"
+                android:id="@+id/user_name_view"
+                android:textColor="#0043B6"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_margin="2dp"
+                />
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:id="@+id/user_status_view"
+                android:textColor="#05A8FF"
+                android:maxWidth="290dp"
+                android:layout_marginTop="2dp"
+                android:layout_weight="1"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/layoutBtnContainer"
+                android:layout_weight="1"
+                android:layout_margin="1dp"
+                >
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:text="Reject"
+                    android:id="@+id/req_reject_btn"
+                    android:background="#DA2B2B"
+                    android:layout_marginEnd="2dp"
+                    android:visibility="invisible"
+                    />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:text="Accept"
+                    android:id="@+id/req_accept_btn"
+                    android:background="#58C61C"
+                    android:layout_marginStart="2dp"
+                    android:visibility="invisible"
+                    />
+
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:id="@+id/online_now"
+        android:visibility="invisible"
+        android:src="@drawable/online"
+        android:layout_alignBottom="@+id/userDisplayLayout"
+        android:layout_marginStart="60dp"
+        android:layout_marginBottom="5dp"
+        />
+
+
+</RelativeLayout>

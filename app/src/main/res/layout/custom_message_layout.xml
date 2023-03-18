@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/receiver_message_layout"
+        android:textColor="#000000"
+        android:maxWidth="320dp"
+        android:minWidth="180dp"
+        android:id="@+id/receiver_message"
+        android:text="Tap to view"
+        android:textSize="16sp"
+        android:layout_marginStart="3dp"
+        android:clickable="true"
+        android:paddingTop="5dp"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:paddingBottom="15dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/message_time_view_rec"
+        android:layout_alignBottom="@+id/receiver_message"
+        android:textSize="12sp"
+        android:layout_marginEnd="10dp"
+        android:layout_alignEnd="@+id/receiver_message"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/sender_message_layout"
+        android:textSize="16sp"
+        android:id="@+id/sender_message"
+        android:maxWidth="320dp"
+        android:minWidth="180dp"
+        android:paddingTop="5dp"
+        android:paddingEnd="5dp"
+        android:paddingStart="5dp"
+        android:clickable="true"
+        android:paddingBottom="15dp"
+        android:layout_marginEnd="3dp"
+        android:text="Tap to View"
+        android:textColor="#000000"
+        />
+    
+    
+    <ImageView
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:id="@+id/sender_image_message"
+        android:scaleType="centerCrop"
+        android:layout_margin="8dp"
+        android:layout_alignParentEnd="true"
+        />
+
+    <ImageView
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:id="@+id/receiver_image_message"
+        android:scaleType="centerCrop"
+        android:layout_margin="8dp"
+        android:layout_alignParentStart="true"
+        />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="7dp"
+        android:layout_alignBottom="@id/sender_message"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/message_time_view"
+            android:textSize="12sp"
+            android:layout_marginEnd="10dp"
+            />
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:id="@+id/message_seen_view"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="7dp"
+        android:layout_alignBottom="@id/sender_image_message"
+
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/image_message_time_view"
+            android:textSize="12sp"
+            android:layout_marginEnd="10dp"
+            />
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:id="@+id/image_message_seen_view"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/image_message_time_view_rec"
+        android:layout_alignBottom="@+id/receiver_image_message"
+        android:textSize="12sp"
+        android:background="#7E7E7E"
+        android:layout_marginEnd="10dp"
+        android:layout_alignEnd="@+id/receiver_image_message"
+
+        />
+
+</RelativeLayout>

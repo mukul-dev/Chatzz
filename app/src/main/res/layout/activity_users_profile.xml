@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UsersProfileActivity">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxHeight="640dp"
+        android:maxWidth="360dp"
+        android:id="@+id/full_image"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        />
+
+    <Button
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:text="X"
+        android:textSize="20sp"
+        android:layout_alignParentEnd="true"
+        android:textColor="#fff"
+        android:background="#f00"
+        android:visibility="gone"
+        android:id="@+id/closeImage"
+        />
+
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:id="@+id/visit_profile_image"
+        android:layout_alignParentTop="true"
+        app:civ_border_color="#171515"
+        app:civ_border_width="3dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/user_img"
+        android:layout_marginTop="20dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="username"
+        android:id="@+id/visit_userName"
+        android:layout_below="@+id/visit_profile_image"
+        android:textSize="26sp"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="Hey! I am Available"
+        android:layout_below="@+id/visit_userName"
+        android:layout_marginTop="4dp"
+        android:textSize="22sp"
+        android:textAlignment="center"
+        android:id="@+id/visit_userStatus"
+        />
+
+    <Button
+        android:id="@+id/Send_msg_request"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Send Request"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:layout_below="@id/visit_userStatus"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        />
+
+    <ProgressBar
+        android:id="@+id/progressBar3"
+        style="?android:attr/progressTint"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/Reject_msg_request"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Send_msg_request"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:enabled="false"
+        android:background="#3967C3"
+        android:text="Reject Request"
+        android:textColor="#fff"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:visibility="invisible" />
+
+
+</RelativeLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".StatusFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/user_img"
+            app:civ_border_width="3dp"
+            android:id="@+id/userImage_status"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tap to add your status"
+            android:textSize="26sp"
+            android:layout_marginStart="10dp"
+            android:textColor="#2962FF"
+            android:layout_marginTop="28dp"
+            android:layout_toEndOf="@+id/userImage_status"
+            android:drawableStart="@drawable/ic_baseline_add_circle_24"
+            android:textStyle="bold"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textViewStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:minHeight="40dp"
+        android:minWidth="80dp"
+        />
+</RelativeLayout>

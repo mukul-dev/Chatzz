@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserDetailSettings">
+
+
+    <EditText
+        android:id="@+id/set_user_name_det"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:hint="Name"
+        android:inputType="none|textPersonName"
+        android:padding="6dp"
+        android:textAlignment="center"
+
+        android:textStyle="italic" />
+
+    <Button
+        android:id="@+id/save_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="10dp"
+        android:padding="6dp"
+        android:text="Save"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#fff"
+        android:textSize="26sp" />
+
+    <TextView
+        android:id="@+id/textviewDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/set_user_name_det"
+        android:layout_marginBottom="10dp"
+        android:text="Please Set User Name!"
+        android:textAlignment="center"
+        android:textColor="#1F57FF"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+    </RelativeLayout>
