@@ -5,6 +5,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -46,6 +47,7 @@ public class PhoneLoginActivity extends AppCompatActivity
 
 
         mAuth = FirebaseAuth.getInstance();
+
 
 
         InputUserPhoneNumber = (EditText) findViewById(R.id.phone_no_input);
@@ -119,8 +121,10 @@ public class PhoneLoginActivity extends AppCompatActivity
             public void onVerificationFailed(FirebaseException e)
             {
                 String message= e.toString();
-                Toast.makeText(PhoneLoginActivity.this, "ERROR : "+message , Toast.LENGTH_LONG).show();
+                Log.d("OTPError1: ", message);
+                Toast.makeText(PhoneLoginActivity.this, "E1ERROR : "+message , Toast.LENGTH_LONG).show();
                 loadingBar.dismiss();
+                System.out.println("OTPError1: "+message);
 
                 InputUserPhoneNumber.setVisibility(View.VISIBLE);
                 SendVerificationCodeButton.setVisibility(View.VISIBLE);
@@ -160,13 +164,15 @@ public class PhoneLoginActivity extends AppCompatActivity
                         if (task.isSuccessful())
                         {
                             loadingBar.dismiss();
-                            Toast.makeText(PhoneLoginActivity.this, "Congratulations, you're logged in Successfully.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(PhoneLoginActivity.this, "Logged in Successfully.", Toast.LENGTH_SHORT).show();
                             SendUserToMainActivity();
                         }
                         else
                         {
                             String message = task.getException().toString();
-                            Toast.makeText(PhoneLoginActivity.this, "Error: " + message, Toast.LENGTH_SHORT).show();
+                            Log.d("OTPError2: ", message);
+
+                            Toast.makeText(PhoneLoginActivity.this, "E2Error: " + message, Toast.LENGTH_SHORT).show();
                             loadingBar.dismiss();
                         }
                     }

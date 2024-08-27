@@ -67,7 +67,7 @@ public class ChatActivity extends AppCompatActivity {
     private String chatReceiverId, chatReceiverName, chatSenderId ,  chatSenderName , receiverProfileImage,saveCurrentTime, saveCurrentDate,dateString, checkType, fileURL;
 
     private FirebaseAuth auth;
-    private DatabaseReference refernce;
+    private DatabaseReference reference;
 
     private Toolbar toolbar;
     private RecyclerView userMessageRecycler;
@@ -100,7 +100,7 @@ public class ChatActivity extends AppCompatActivity {
         chatSenderName= getIntent().getExtras().get("chatSName").toString();
         auth= FirebaseAuth.getInstance();
         chatSenderId= auth.getCurrentUser().getUid();
-        refernce= FirebaseDatabase.getInstance().getReference();
+        reference= FirebaseDatabase.getInstance().getReference();
 
         toolbar= findViewById(R.id.chat_toolbar);
         setSupportActionBar(toolbar);
@@ -282,7 +282,7 @@ public class ChatActivity extends AppCompatActivity {
 
     private void messageLoader() {
 
-        refernce.child("Messages").child(chatSenderId).child(chatReceiverId).addChildEventListener(new ChildEventListener() {
+        reference.child("Messages").child(chatSenderId).child(chatReceiverId).addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 UserMessages messages= dataSnapshot.getValue(UserMessages.class);
@@ -369,7 +369,7 @@ public class ChatActivity extends AppCompatActivity {
                 final String senderRef= "Messages/" +chatSenderId+"/"+chatReceiverId;
                 final String receiverRef= "Messages/" +chatReceiverId+"/"+chatSenderId;
 
-                DatabaseReference messageKeyRef= refernce.child("Messages").child(chatSenderId).child(chatReceiverId).push();
+                DatabaseReference messageKeyRef= reference.child("Messages").child(chatSenderId).child(chatReceiverId).push();
                 final String messageId= messageKeyRef.getKey();
 
                 final StorageReference filePath= storageReference.child(messageId+"."+"jpg");
@@ -409,7 +409,7 @@ public class ChatActivity extends AppCompatActivity {
                         textDetails.put(senderRef+"/"+ messageId,imageLayout);
                         textDetails.put(receiverRef+"/"+ messageId,imageLayout);
 
-                        refernce.updateChildren(textDetails).addOnCompleteListener(new OnCompleteListener() {
+                        reference.updateChildren(textDetails).addOnCompleteListener(new OnCompleteListener() {
                             @Override
                             public void onComplete(@NonNull Task task) {
 
@@ -438,7 +438,7 @@ public class ChatActivity extends AppCompatActivity {
 
     private void getLastSeenInfo(){
 
-            refernce.child("Users").child(chatReceiverId).addValueEventListener(new ValueEventListener() {
+            reference.child("Users").child(chatReceiverId).addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
@@ -480,7 +480,7 @@ public class ChatActivity extends AppCompatActivity {
         String Message= messageInput.getText().toString();
         if(!(TextUtils.isEmpty(Message))){
 
-            DatabaseReference messageKeyRef= refernce.child("Messages").child(chatSenderId).child(chatReceiverId).push();
+            DatabaseReference messageKeyRef= reference.child("Messages").child(chatSenderId).child(chatReceiverId).push();
             String messageId= messageKeyRef.getKey();
             Map textLayout= new HashMap();
             textLayout.put("message", Message);
@@ -496,7 +496,7 @@ public class ChatActivity extends AppCompatActivity {
             textDetails.put(senderRef+"/"+ messageId,textLayout);
             textDetails.put(receiverRef+"/"+ messageId,textLayout);
 
-            refernce.updateChildren(textDetails).addOnCompleteListener(new OnCompleteListener() {
+            reference.updateChildren(textDetails).addOnCompleteListener(new OnCompleteListener() {
                 @Override
                 public void onComplete(@NonNull Task task) {
                     
@@ -566,7 +566,7 @@ public class ChatActivity extends AppCompatActivity {
         lastSeenMap.put("date", saveCurrentDate);
         lastSeenMap.put("On_Off_Line", state_On_Off_Line);
 
-        refernce.child("Users").child(chatSenderId).child("lastSeenInfo")
+        reference.child("Users").child(chatSenderId).child("lastSeenInfo")
                 .updateChildren(lastSeenMap);
 
     }
